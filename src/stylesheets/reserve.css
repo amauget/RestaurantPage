@@ -1,0 +1,73 @@
+.reserveContainer{
+
+  /* width:100%; */
+  justify-self: center;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows:repeat(3, auto) 2.5rem;
+  gap:5%;
+}
+.reserveContainer h2 {
+  grid-column: 1/3;
+  justify-self: center;
+}
+#time,#date{
+  background-color: wheat;
+  color:black;
+  font-size: 1.5rem;
+  height:1.7rem;
+}
+.timeHeader{
+  grid-row:2/3 ;
+  grid-column: 1/2;
+}
+#time{
+  grid-column: 1/2;
+  grid-row: 3/4;
+  outline: none; /* Remove default outline */
+ 
+}
+.dateHeader{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+#date{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+h2{
+  font-size: 2.2rem;
+}
+.reserveBtn{
+  grid-row: 4/5;
+  grid-column: 1/3;
+  margin-top: 5vh;
+  width:50%;
+  justify-self: center;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  border: none;
+  background-color: black;
+  color: wheat;
+}
+.reserveBtn:hover{
+  cursor: pointer;
+  background-color: rgb(49, 49, 49);
+}
+.processAlert{
+  position: fixed; 
+  top:50;
+  left:7;
+
+
+  z-index: 1000;
+  background-color: wheat;
+  align-self: end;
+  text-align: center;
+  width:clamp(100px, 55vw, 800px);
+  color:rgb(0, 0, 0);
+  font-size: 2rem;
+  padding:1% 0;
+  border-radius: 10px;
+  
+}
