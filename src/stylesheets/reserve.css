@@ -1,6 +1,4 @@
 .reserveContainer{
-
-  /* width:100%; */
   justify-self: center;
   display:grid;
   grid-template-columns: 1fr 1fr;
@@ -70,4 +68,18 @@ h2{
   padding:1% 0;
   border-radius: 10px;
   
+}
+
+@media only screen and (max-width:900px) { 
+  #date, #time{
+    font-size: 1rem;
+    width:fit-content
+  }
+  h2{
+    margin-bottom: 0;
+  }
+  .reserveBtn{
+    margin-top: 0;
+  }
+
 }

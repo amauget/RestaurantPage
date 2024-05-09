@@ -1,11 +1,11 @@
 import './stylesheets/reserve.css';
 
 function reserveContent(bodyContainer){
-  let reserveContainer = reserveDOMConstruct(bodyContainer);
+  let reserveContainer = reserveDOMConstruct();
   bodyContainer.append(reserveContainer);
 
 }
-function reserveDOMConstruct(bodyContainer){
+function reserveDOMConstruct(){
   let reserveContainer = document.createElement('div');
   reserveContainer.className = 'reserveContainer';
 

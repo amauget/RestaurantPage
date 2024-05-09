@@ -9,6 +9,14 @@ function pageElements(){
   let bodyContainer = document.createElement('div');
   bodyContainer.className = 'bodyContainer';
 
+  //List Icon
+  let listIcon = document.createElement('img');
+  listIcon.src = 'externalContent/listIconWhite.svg';
+  listIcon.className = 'listIcon';
+
+  let sidebarContainer = document.querySelector('.sideBarContainer');
+
+  body.appendChild(listIcon);
 
   //SideBar
   let sideBar = document.querySelector('.sideBar');
@@ -29,9 +37,23 @@ function pageElements(){
 
   sideBar.append(icon,name, exitBtn, content);
 
+  //Sidebar Event Functions
+
+  listIcon.onclick = function(){
+    sidebarContainer.classList.toggle("visible");
+  }
+
   exitBtn.addEventListener('click',() =>{
     sidebarContainer.className = "sideBarContainer";
   })
+
+  //Sidebar Elements
+  let buttonElements = ['Home', 'Menu', 'Reserve'];
+  
+  for (let i = 0; i < buttonElements.length; i++){
+    createElements(buttonElements[i]);
+    
+  }
 
   function createElements(item){
     let element = document.createElement('button');
@@ -48,8 +70,7 @@ function pageElements(){
       
     })
   }
-  let home = createElements('Home'), menu = createElements('Menu'), Reserve = createElements('Reserve');
-  
+
   function initiate(pageSelect){
     bodyContainer.innerHTML = ''; /* reset container when items are clicked */
     if(pageSelect === 'Home'){
@@ -64,21 +85,6 @@ function pageElements(){
     body.appendChild(bodyContainer);
     
   }
-  //List Icon
-  let listIcon = document.createElement('img');
-  listIcon.src = 'externalContent/listIconWhite.svg';
-  listIcon.className = 'listIcon';
-
-  let sidebarContainer = document.querySelector('.sideBarContainer');
-
-  listIcon.onclick = function(){
-    sidebarContainer.classList.toggle("visible");
-  }
-
-  body.appendChild(listIcon);
-
-  
 }
-console.trace();
-// npx webpack --watch to start live webpack server
+
 pageElements();
